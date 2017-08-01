@@ -29,7 +29,7 @@ after_initialize do
         user.trust_level = TrustLevel[1]
     end
 
-    # event listener to listen for creation of new topic
+    # event listener for creation of new topic
     # once a topic is created, automatically reply topic with wiki post
     DiscourseEvent.on(:topic_created) do |topic|
         post = PostCreator.create(user,
