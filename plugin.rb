@@ -34,7 +34,7 @@ after_initialize do
     DiscourseEvent.on(:topic_created) do |topic|
         post = PostCreator.create(user,
                     topic_id: topic.id,
-                    raw: "This is the student response post. You can edit this out for your response.")
+                    raw: I18n.t('bot.default_message'))
         post.wiki = true
         post.save!
     end
