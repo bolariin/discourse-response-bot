@@ -28,4 +28,14 @@ after_initialize do
         user.approved = true
         user.trust_level = TrustLevel[1]
     end
+
+    # event listener to listen for new topic creation
+    # once a topic is created, automatically reply topic with wiki post
+    DiscourseEvent.on(:topic_created) do |topic|
+        post = PostCreator.create(user,
+                    topic_id: topic.id,
+                    raw: "This is the student response post. You can edit this out for your response."
+        post.wiki = true
+        post.save!
+    end
 end
