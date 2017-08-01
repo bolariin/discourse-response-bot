@@ -1,0 +1,4 @@
+plugins:
+  response_enabled:
+    default: true
+    client: true
