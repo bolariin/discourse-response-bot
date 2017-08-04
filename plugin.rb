@@ -37,7 +37,7 @@ after_initialize do
                         topic_id: topic.id,
                         raw: I18n.t('bot.default_message'))
             post.wiki = true
-            post.save!
+            post.save(validate: false)
         end
     end
 end
