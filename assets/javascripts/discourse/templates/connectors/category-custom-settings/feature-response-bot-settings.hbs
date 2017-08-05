@@ -7,6 +7,13 @@
             {{i18n 'feature_response.enable_response_bot'}}
         </label>
     </div>
+    {{else}}
+    <div class="disable-response-bot">
+        <label class="checkbox-label">
+            {{input type="checkbox" checked=category.disable_response_bot}}
+            {{i18n 'feature_response.disable_response_bot'}}
+        </label>
+    </div>
     {{/unless}}
 </section>
 {{/if}}

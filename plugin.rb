@@ -10,7 +10,7 @@ after_initialize do
 
     class ::Category
 
-        def self.reset_response_cache
+        def self.reset_enabled_cache
             @@enable_response_cache["allowed"] =
             begin
                 Set.new(
@@ -20,27 +20,49 @@ after_initialize do
                 )
             end
         end
+
+        def self.reset_disabled_cache
+            @@disable_response_cache["allowed"] =
+            begin
+                Set.new(
+                    CategoryCustomField
+                    .where(name: "disable_response_bot", value: "true")
+                    .pluck(:category_id)
+                )
+            end
+        end
   
         @@enable_response_cache = DistributedCache.new("enable_response")
-  
-        def self.is_response_bot_enabled_on_category?(category_id)
-            return true if SiteSetting.allow_response_bot_to_reply_all_new_topics
+        @@disable_response_cache = DistributedCache.new("disable_response")
 
-            unless set = @@enable_response_cache["allowed"]
-                set = ::Category.reset_response_cache
+        def self.is_response_bot_enabled_on_category?(category_id)
+
+            unless (enabled_set = @@enable_response_cache["allowed"] && disabled_set = @@disable_response_cache["allowed"])
+                enabled_set = ::Category.reset_enabled_cache
+                disabled_set = ::Category.reset_disabled_cache
             end
-            set.include?(category_id)
+
+            if SiteSetting.allow_response_bot_to_reply_all_new_topics
+                return !(disabled_set.include?(category_id))
+            end
+            enabled_set.include?(category_id)
         end
 
         def self.can_respond?(topic)
             SiteSetting.response_enabled && ::Category.is_response_bot_enabled_on_category?(topic.category_id) && (!topic.closed?)
         end
   
-        after_save :reset_response_cache
+        after_save :reset_enabled_cache
+        after_save :reset_disabled_cache
   
         protected
-        def reset_response_cache
-          ::Category.reset_response_cache
+        def reset_enabled_cache
+          ::Category.reset_enabled_cache
+        end
+
+        protected
+        def reset_disabled_cache
+            ::Category.reset_disabled_cache
         end
     end
   

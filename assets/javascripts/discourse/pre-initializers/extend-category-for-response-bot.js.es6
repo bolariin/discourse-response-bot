@@ -7,7 +7,7 @@ export default {
   initialize() {
 
     Category.reopen({
-
+      
       @property('custom_fields.enable_response_bot')
       enable_response_bot: {
         get(enableField) {
@@ -18,7 +18,20 @@ export default {
           this.set("custom_fields.enable_response_bot", value);
           return value;
         }
+      },
+
+      @property('custom_fields.disable_response_bot')
+      disable_response_bot: {
+        get(enableField) {
+          return enableField === "true";
+        },
+        set(value) {
+          value = value ? "true" : "false";
+          this.set("custom_fields.disable_response_bot", value);
+          return value;
+        }
       }
+      
     });
   }
 };
