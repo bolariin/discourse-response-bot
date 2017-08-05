@@ -1,0 +1,12 @@
+{{#if siteSettings.response_enabled}}
+<section class='field'>
+    {{#unless siteSettings.allow_response_bot_to_reply_all_new_topics}}
+    <div class="enable-response-bot">
+        <label class="checkbox-label">
+            {{input type="checkbox" checked=category.enable_response_bot}}
+            {{i18n 'feature_response.enable_response_bot'}}
+        </label>
+    </div>
+    {{/unless}}
+</section>
+{{/if}}

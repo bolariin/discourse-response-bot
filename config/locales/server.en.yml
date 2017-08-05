@@ -1,3 +1,5 @@
 en:
   site_settings:
     response_enabled: "Enable automated response, allow plugin to respond with a wiki post"
+    allow_response_bot_to_reply_all_new_topics: "Allow response bot to reply all topics (by default you control this by editing categories)"
+    
