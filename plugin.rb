@@ -65,17 +65,16 @@ after_initialize do
             ::Category.reset_disabled_cache
         end
     end
-  
 
-    # Check if user already exists
-    # using a negative number to ensure it is unique
-    user = User.find_by(id: -10)
+    ## Check if user already exists
+    ## using a negative number to ensure it is unique
+    bot = User.find_by(id: -10)
 
-    # user created
-    if !user
+    if !bot
         response_username = "student_response"
         response_name = "Student Reponse"
-        
+    
+        # user created
         user = User.new
         user.id = -10
         user.name = response_name
@@ -88,11 +87,11 @@ after_initialize do
         user.trust_level = TrustLevel[1]
     end
 
-    # event listener for creation of new topic
-    # once a topic is created, automatically reply topic with wiki post
+    ## event listener for creation of new topic
+    ## once a topic is created, automatically reply topic with wiki post
     DiscourseEvent.on(:topic_created) do |topic|
         if ::Category.can_respond?(topic)
-            post = PostCreator.create(user,
+            post = PostCreator.create(bot,
                         topic_id: topic.id,
                         raw: I18n.t('bot.default_message'))
             post.wiki = true
