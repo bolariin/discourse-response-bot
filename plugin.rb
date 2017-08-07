@@ -68,23 +68,23 @@ after_initialize do
 
     ## Check if user already exists
     ## using a negative number to ensure it is unique
-    bot = User.find_by(id: -10)
+    bot = User.find_by(id: -11)
 
     if !bot
-        response_username = "student_response"
+        response_username = "responseBot"
         response_name = "Student Reponse"
     
         # user created
-        user = User.new
-        user.id = -10
-        user.name = response_name
-        user.username = response_username
-        user.email = "student_response@me.com"
-        user.username_lower = response_username.downcase
-        user.password = SecureRandom.hex
-        user.active = true
-        user.approved = true
-        user.trust_level = TrustLevel[1]
+        bot = User.new
+        bot.id = -11
+        bot.name = response_name
+        bot.username = response_username
+        bot.email = "responseBot@me.com"
+        bot.username_lower = response_username.downcase
+        bot.password = SecureRandom.hex
+        bot.active = true
+        bot.approved = true
+        bot.trust_level = TrustLevel[1]
     end
 
     ## event listener for creation of new topic
