@@ -74,7 +74,7 @@ after_initialize do
         response_username = "responseBot"
         response_name = "Student Reponse"
     
-        # user created
+        # bot created
         bot = User.new
         bot.id = -11
         bot.name = response_name
