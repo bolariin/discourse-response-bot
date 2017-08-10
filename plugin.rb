@@ -72,7 +72,7 @@ after_initialize do
 
     if !bot
         response_username = "responseBot"
-        response_name = "Student Reponse"
+        response_name = "Student Response"
     
         # bot created
         bot = User.new
