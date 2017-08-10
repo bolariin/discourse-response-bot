@@ -32,7 +32,7 @@ git pull
 * Restart Discourse
 
 ### Local Development Installation
-* Clone the [Discourse Response Bot Repo](http://github.com/bolariin/discourse-) in a new local folder.
+* Clone the [Discourse Response Bot Repo](http://github.com/bolariin/discourse-response-bot) in a new local folder.
 * Separately clone [Discourse Forum](https://github.com/discourse/discourse) in another local folder and [install Discourse](https://meta.discourse.org/t/beginners-guide-to-install-discourse-on-ubuntu-for-development/14727).
 * In your terminal, go into Discourse folder navigate into the plugins folder.  Example ```cd ~/code/discourse/plugins```
 * Create a symlink in this folder by typing the following into your terminal
