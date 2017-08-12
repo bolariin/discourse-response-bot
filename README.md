@@ -51,7 +51,7 @@ For example: ln -s ~/discourse-plugin-test .
   ![responsebot-plugin-setting 2](https://user-images.githubusercontent.com/24629960/29168784-77e81116-7d9e-11e7-8d80-3b2ee5f6e7fe.png)
   
   * In the category settings of the select category, enable "Allow response bot to reply topics in this category"
-![responsebot-category-setting 2](https://user-images.githubusercontent.com/24629960/29168788-77ebb0aa-7d9e-11e7-8c08-2dd17c3a4f51.png)
+![responsebot-category-setting 2](https://user-images.githubusercontent.com/24629960/29244030-479d3132-7f7c-11e7-9809-19dc3fcc7704.png)
 
   * Now, the response bot will respond new topics in that category.
   
@@ -60,7 +60,7 @@ For example: ln -s ~/discourse-plugin-test .
   ![responsebot-plugin-setting 1](https://user-images.githubusercontent.com/24629960/29168787-77eb612c-7d9e-11e7-9f06-981903255f06.png)
   
   * In the category settings of the select category, enable "Disallow response bot from replying topics in this category"
-![responsebot-category-setting 1](https://user-images.githubusercontent.com/24629960/29168785-77ea7e42-7d9e-11e7-8d2b-41f26fc61cee.png)
+![responsebot-category-setting 1](https://user-images.githubusercontent.com/24629960/29244031-47a2b8be-7f7c-11e7-9683-fc0a6423a3f5.png)
 
   * Now, the response bot will not respond new topics in that category.
   
