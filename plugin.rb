@@ -2,7 +2,7 @@
 # about: Replies new topic with default wiki post
 # version: 0.1
 # authors: Bolarinwa Balogun
-# url: https://github.com/bolariin/response-bot
+# url: https://github.com/bolariin/discourse-response-bot.git
 
 enabled_site_setting :response_enabled
 
@@ -10,6 +10,8 @@ after_initialize do
 
     class ::Category
 
+        # Stores the category_id of categories with the field 
+        # "enable_response_bot" set to true.
         def self.reset_enabled_cache
             @@enable_response_cache["allowed"] =
             begin
@@ -21,6 +23,8 @@ after_initialize do
             end
         end
 
+        # Stores the category_id of categories with the field 
+        # "disable_response_bot" set to true.
         def self.reset_disabled_cache
             @@disable_response_cache["allowed"] =
             begin
@@ -31,10 +35,13 @@ after_initialize do
                 )
             end
         end
-  
+        
+        ## DistributedCache is like a hash
         @@enable_response_cache = DistributedCache.new("enable_response")
         @@disable_response_cache = DistributedCache.new("disable_response")
 
+        # Checks if response bot is allowed to make responses
+        # in the requested category.
         def self.is_response_bot_enabled_on_category?(category_id)
 
             unless (enabled_set = @@enable_response_cache["allowed"] && disabled_set = @@disable_response_cache["allowed"])
@@ -47,29 +54,34 @@ after_initialize do
             end
             enabled_set.include?(category_id)
         end
-
+        
+        # Checks if response bot is allowed to reply a topic.
         def self.can_respond?(topic)
             SiteSetting.response_enabled && ::Category.is_response_bot_enabled_on_category?(topic.category_id) && (!topic.closed?)
         end
-  
+        
+        # Calls reset_enabled cache and reset_disabled cache
+        # after save is made in category settings.
         after_save :reset_enabled_cache
         after_save :reset_disabled_cache
-  
+        
+        # Updates the enable_response_cache.
         protected
         def reset_enabled_cache
           ::Category.reset_enabled_cache
         end
 
+        # Updates the disable_response_cache.
         protected
         def reset_disabled_cache
             ::Category.reset_disabled_cache
         end
     end
 
-    ## Check if user already exists
-    ## using a negative number to ensure it is unique
+
     bot = User.find_by(id: -11)
 
+    # Handles creation of bot if it doesn't exist
     if !bot
         response_username = "responseBot"
         response_name = "Student Response"
@@ -87,7 +99,7 @@ after_initialize do
         bot.trust_level = TrustLevel[1]
     end
 
-    ## event listener for creation of new topic
+    ## Event listener listening for creation of a new topic
     ## once a topic is created, automatically reply topic with wiki post
     DiscourseEvent.on(:topic_created) do |topic|
         if ::Category.can_respond?(topic)
