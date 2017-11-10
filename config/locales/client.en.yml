@@ -1,6 +1,4 @@
 en:
-  bot:
-    default_message: <i>This is the student response post. You can edit this out for your response.</i>
   js:
     feature_response:
       enable_response_bot: "Allow response bot to reply topics in this category"

@@ -57,7 +57,10 @@ after_initialize do
         
         # Checks if response bot is allowed to reply a topic.
         def self.can_respond?(topic)
-            SiteSetting.response_enabled && ::Category.is_response_bot_enabled_on_category?(topic.category_id) && (!topic.closed?)
+            SiteSetting.response_enabled && 
+                ::Category.is_response_bot_enabled_on_category?(topic.category_id) && 
+                (!topic.closed?) &&
+                (topic.archetype != 'private_message')
         end
         
         # Calls reset_enabled cache and reset_disabled cache
@@ -104,10 +107,13 @@ after_initialize do
     DiscourseEvent.on(:topic_created) do |topic|
         if ::Category.can_respond?(topic)
             post = PostCreator.create(bot,
+                        skip_validations: true,
                         topic_id: topic.id,
-                        raw: I18n.t('bot.default_message'))
-            post.wiki = true
-            post.save(validate: false)
+                        raw: SiteSetting.response_default_message)
+            unless post.nil?
+                post.wiki = true
+                post.save(validate: false)
+            end
         end
     end
 end
