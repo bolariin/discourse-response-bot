@@ -5,3 +5,6 @@ plugins:
   allow_response_bot_to_reply_all_new_topics:
     default: true
     client: true
+  response_default_message:
+    default: "This is the response wiki post. You can edit this out for your response."
+    client: true

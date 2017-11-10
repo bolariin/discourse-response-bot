@@ -109,7 +109,7 @@ after_initialize do
             post = PostCreator.create(bot,
                         skip_validations: true,
                         topic_id: topic.id,
-                        raw: I18n.t('bot.default_message'))
+                        raw: SiteSetting.response_default_message)
             unless post.nil?
                 post.wiki = true
                 post.save(validate: false)
