@@ -46,6 +46,10 @@ For example: ln -s ~/discourse-plugin-test .
 * By default, all settings have been enabled
 ![responsebot-plugin-setting 1](https://user-images.githubusercontent.com/24629960/29168787-77eb612c-7d9e-11e7-9f06-981903255f06.png)
 ### Few Tricks
+* If you wish to change the default response message of reponse bot, you can achieve this.
+  * In the plugin settings for response bot
+  ![responsebot-plugin-setting](https://user-images.githubusercontent.com/24629960/32695148-91d504c2-c721-11e7-9184-cf1cb23753d0.png)
+  
 * If you wish to enable response by the response bot on a few select categories, you can acheive this.
   * You can achieve this by unselecting "Allow response bot to reply all topics"
   ![responsebot-plugin-setting 2](https://user-images.githubusercontent.com/24629960/29168784-77e81116-7d9e-11e7-8d80-3b2ee5f6e7fe.png)
