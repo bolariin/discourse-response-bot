@@ -3,7 +3,7 @@ This is a <a href="https://www.discourse.org/">Discourse</a> plugin. It works as
 
 ![responsebot-look](https://user-images.githubusercontent.com/24629960/29168786-77eb1d98-7d9e-11e7-8118-c9c6254217a2.png)
 
-## Installation
+## Install
 
 ### Docker installation
 As seen in a [how-to on meta.discourse.org](https://meta.discourse.org/t/advanced-troubleshooting-with-docker/15927#Example:%20Install%20a%20plugin), add this repository's `git clone` url to your container's `app.yml` file, at the bottom of the `cmd` section:
