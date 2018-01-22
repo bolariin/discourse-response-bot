@@ -45,7 +45,7 @@ For example: ln -s ~/discourse-plugin-test .
 ## Getting Started
 * By default, all settings have been enabled
 ![responsebot-plugin-setting 1](https://user-images.githubusercontent.com/24629960/29168787-77eb612c-7d9e-11e7-9f06-981903255f06.png)
-### Few Tricks
+### Features
 * If you wish to change the default response message of reponse bot, you can achieve this.
   * In the plugin settings for response bot
   ![responsebot-plugin-setting](https://user-images.githubusercontent.com/24629960/32695148-91d504c2-c721-11e7-9184-cf1cb23753d0.png)
