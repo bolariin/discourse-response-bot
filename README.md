@@ -38,7 +38,7 @@ git pull
 * Create a symlink in this folder by typing the following into your terminal
 ```
 ln -s ~/whereever_your_cloned_ad_plugin_path_is .
-For example: ln -s ~/discourse-plugin-test .
+For example: ln -s ~/discourse-response-bot .
 ```
 * You can now make changes in your locally held Discourse Response Bot folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
 
