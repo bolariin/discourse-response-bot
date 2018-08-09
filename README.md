@@ -1,5 +1,5 @@
 # Discourse Response Bot
-This is a <a href="https://www.discourse.org/">Discourse</a> plugin. It works as a bot automatically replying newly created topics within a Discourse forum with a default wiki post. This allows users to collaborate and construct a single answer for topics created.
+This is a [Discourse](https://www.discourse.org/) plugin. It works as a bot automatically replying newly created topics within a Discourse forum with a default wiki post. This allows users to collaborate and construct a single answer for topics created.
 
 ![responsebot-look](https://user-images.githubusercontent.com/24629960/29168786-77eb1d98-7d9e-11e7-8118-c9c6254217a2.png)
 
@@ -67,6 +67,9 @@ For example: ln -s ~/discourse-response-bot .
 ![responsebot-category-setting 1](https://user-images.githubusercontent.com/24629960/29244031-47a2b8be-7f7c-11e7-9683-fc0a6423a3f5.png)
 
   * Now, the response bot will not respond new topics in that category.
-  
+
+## Suggestions/Issues
+If you have issues or suggestions for this plugin, please bring them up on [Discourse Meta](https://meta.discourse.org/t/discourse-response-bot/79673).
+
 ## License
 MIT
