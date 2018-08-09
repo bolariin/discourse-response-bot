@@ -69,7 +69,7 @@ For example: ln -s ~/discourse-response-bot .
   * Now, the response bot will not respond new topics in that category.
 
 ## Suggestions/Issues
-If you have issues or suggestions for this plugin, please bring them up on [Discourse Meta](https://meta.discourse.org/t/discourse-response-bot/79673).
+Feel free to report issues, ask questions or suggest improvements/fixes on [Discourse Meta](https://meta.discourse.org/t/discourse-response-bot/79673).
 
 ## License
 MIT
