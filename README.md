@@ -45,6 +45,15 @@ For example: ln -s ~/discourse-response-bot .
 ## Getting Started
 * By default, all settings have been enabled
 ![responsebot-plugin-setting 1](https://user-images.githubusercontent.com/24629960/29168787-77eb612c-7d9e-11e7-9f06-981903255f06.png)
+
+* The details of the response bot such as username, name, trust level and much more can be changed in the admin panel. To change response bot details
+  * Open up the admin panel
+  * Select Users (it is the option beside Settings)
+  * You should find "responseBot" in the table under Active, 
+    * if "responseBot" is not under Active, click New (the option beside Active)
+    * Check the table underneath New
+  * Click on "responseBot", now you have full control to change any response bot details.
+  
 ### Features
 * If you wish to change the default response message of reponse bot, you can achieve this.
   * In the plugin settings for response bot
