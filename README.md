@@ -33,11 +33,11 @@ git pull
 
 ### Local Development Install
 * Clone the [Discourse Response Bot Repo](http://github.com/bolariin/discourse-response-bot) in a new local folder.
-* Separately clone [Discourse Forum](https://github.com/discourse/discourse) in another local folder and [install Discourse](https://meta.discourse.org/t/beginners-guide-to-install-discourse-on-ubuntu-for-development/14727).
+* Separately clone [Discourse Forum](https://github.com/discourse/discourse) into another local folder and [install Discourse](https://meta.discourse.org/t/beginners-guide-to-install-discourse-on-ubuntu-for-development/14727).
 * In your terminal, go into Discourse folder navigate into the plugins folder.  Example ```cd ~/code/discourse/plugins```
-* Create a symlink for the downloaded response bot plugin in this folder by typing the following into your terminal
+* Create a symlink for the downloaded response bot plugin in this folder (plugins folder) by typing the following into your terminal
 ```
-ln -s ~/whereever_your_cloned_plugin_path_is .
+ln -s ~/path_of_cloned_discourse_response_bot_plugin .
 For example: ln -s ~/discourse-response-bot .
 ```
 * You can now make changes in your locally held Discourse Response Bot folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
@@ -46,15 +46,15 @@ For example: ln -s ~/discourse-response-bot .
 * By default, all settings have been enabled
 ![responsebot-plugin-setting 1](https://user-images.githubusercontent.com/24629960/29168787-77eb612c-7d9e-11e7-9f06-981903255f06.png)
 
-* The details of the response bot such as username, name, trust level and much more can be changed in the admin panel. \
-  PS: Changes to the username and name will reflect in previous posts made by response bot. \
+* The details of the response bot such as username, name, trust level and more can be changed in the admin panel. \
   To change response bot details
   * Open up the admin panel
   * Select Users (it is the option beside Settings)
   * You should find "responseBot" in the table under Active, 
     * if "responseBot" is not under Active, click New (the option beside Active)
     * Check the table underneath New
-  * Click on "responseBot", now you have full control to change any response bot details.
+  * Click on "responseBot", now you have full control to change any response bot details. \
+ PS: Changes to the username and name will reflect in previous posts made by response bot.
   
 ### Features
 * If you wish to change the default response message of reponse bot, you can achieve this.
