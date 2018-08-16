@@ -35,9 +35,9 @@ git pull
 * Clone the [Discourse Response Bot Repo](http://github.com/bolariin/discourse-response-bot) in a new local folder.
 * Separately clone [Discourse Forum](https://github.com/discourse/discourse) in another local folder and [install Discourse](https://meta.discourse.org/t/beginners-guide-to-install-discourse-on-ubuntu-for-development/14727).
 * In your terminal, go into Discourse folder navigate into the plugins folder.  Example ```cd ~/code/discourse/plugins```
-* Create a symlink in this folder by typing the following into your terminal
+* Create a symlink for the downloaded response bot plugin in this folder by typing the following into your terminal
 ```
-ln -s ~/whereever_your_cloned_ad_plugin_path_is .
+ln -s ~/whereever_your_cloned_plugin_path_is .
 For example: ln -s ~/discourse-response-bot .
 ```
 * You can now make changes in your locally held Discourse Response Bot folder and see the effect of your changes when your run ```rails s``` in your locally held Discourse Forum files.
@@ -55,7 +55,6 @@ For example: ln -s ~/discourse-response-bot .
     * if "responseBot" is not under Active, click New (the option beside Active)
     * Check the table underneath New
   * Click on "responseBot", now you have full control to change any response bot details.
-  
   
 ### Features
 * If you wish to change the default response message of reponse bot, you can achieve this.
